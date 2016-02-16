@@ -38,7 +38,7 @@ $statueOfLibertyPoint = new GeoPoint(40.689604, -74.04455, GeoPoint::DEGREES);
 
 This is inspired by [David Wood's JavaScript port](https://github.com/davidwood/node-geopoint) of the Java code presented in [Finding Points Within a Distance of a Latitude/Longitude Using Bounding Coordinates](http://janmatuschek.de/LatitudeLongitudeBoundingCoordinates) by [Jan Philip Matuschek](http://janmatuschek.de/Contact).
 
-## PHP Implementation Authors/Contributors
+## Authors/Contributors
 
 * Will Fitch (<wfitch@meetme.com>)
 * Jonah H. Harris (<jonah.harris@meetme.com>)
