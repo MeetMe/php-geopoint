@@ -1,0 +1,38 @@
+{
+  "name": "meetme/php-geopoint",
+  "description": "PHP implementation of GeoPoint",
+  "keywords": ["distance", "longitude", "latitude", "geopoint"],
+  "homepage": "https://github.com/MeetMe/php-geopoint/",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "MeetMe",
+      "email": "oss@meetme.com",
+      "homepage": "http://engineering.meetme.com/"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.3"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.8"
+  },
+  "suggest": {
+  },
+  "autoload": {
+    "psr-4": {"MeetMe\\": "src/MeetMe"}
+  },
+  "autoload-dev": {
+    "psr-4": {"MeetMe\\": "tests/MeetMe"}
+  },
+  "provide": {
+  },
+  "extra": {
+  },
+  "scripts": {
+    "test": [
+      "phpunit"
+    ]
+  }
+}

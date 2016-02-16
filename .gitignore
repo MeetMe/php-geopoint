@@ -1,0 +1,5 @@
+.idea
+*.iml
+vendor/
+test.php
+composer.lock
