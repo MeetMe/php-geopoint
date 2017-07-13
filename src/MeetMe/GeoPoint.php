@@ -80,6 +80,7 @@ class GeoPoint
      */
     public function __construct($lat, $lon, $format)
     {
+        $this->preValidateParameters($lat, $lon);
         $this->maxLatitude = (M_PI / 2);
         $this->minLatitude = -$this->maxLatitude;
         $this->minLogitude = -$this->maxLongitude;
@@ -101,7 +102,7 @@ class GeoPoint
             );
         }
 
-        $this->validateParameters($lat, $lon);
+        $this->validateParameters();
     }
 
     /**
@@ -313,7 +314,7 @@ class GeoPoint
      * @param int|float $lat
      * @param int|float $lon
      */
-    protected function validateParameters($lat, $lon)
+    protected function preValidateParameters($lat, $lon)
     {
         if (!is_numeric($lat)) {
             throw new RuntimeException('Latitude must be numeric');
@@ -322,12 +323,19 @@ class GeoPoint
         if (!is_numeric($lon)) {
             throw new RuntimeException('Longitude must be numeric');
         }
+    }
 
+    /**
+     * Validates the parameters from the constructor
+     *
+     */
+    protected function validateParameters()
+    {
         if ($this->radLat < $this->minLatitude || $this->radLat > $this->maxLatitude) {
             throw new RuntimeException('Latitude out of bounds');
         }
 
-        if ($this->radLon < $this->minLatitude || $this->radLon > $this->maxLatitude) {
+        if ($this->radLon < $this->minLogitude || $this->radLon > $this->maxLongitude) {
             throw new RuntimeException('Longitude out of bounds');
         }
     }
